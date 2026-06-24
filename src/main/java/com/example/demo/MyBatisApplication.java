@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.mapper.ArticleMapper;
 import com.example.demo.mapper.MemberMapper;
+import com.example.demo.model.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,7 @@ public class MyBatisApplication implements ApplicationRunner {
         int count = memberMapper.selectAllCount();
         log.info("Member count: {}", count);
 
-
+        Member member = memberMapper.selectById(3L).orElse(Member.builder().build());
+        log.info("member.selectById(3L) : {}", member);
     }
 }

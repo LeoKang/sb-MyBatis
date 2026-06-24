@@ -11,4 +11,8 @@
         SELECT COUNT(*) FROM member
     </select>
 
+    <select id="selectById">
+        SELECT * FROM member WHERE id=#{id}
+    </select>
+
 </mapper>
